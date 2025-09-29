@@ -1,6 +1,8 @@
 CSV Matrix Processing API – Build & Run Guide
+
 Overview
 This Spring Boot API processes a CSV file containing a square matrix of integers. It performs the following operations: Echo (original matrix), Invert (rows and columns swapped), Flatten (all values in one line), Sum (sum of all integers), and Product (product of all integers). The API returns a structured JSON response including status code, message, and matrix results.
+
 Prerequisites
 ● Java 8+
 ● Maven 3.x
@@ -13,6 +15,7 @@ Build Instructions
 ● Run Instructions
 ● Run the Spring Boot application:
 ~ mvn spring-boot:run
+
 API Details:
 ● The API server will start at: http://localhost:8080
 ● API Usage
@@ -20,6 +23,7 @@ API Details:
 ● Method: POST
 ● Request Parameter: file (CSV file)
 Example using cURL: curl -F 'file=@/path/to/matrix.csv' "http://localhost:8080/processCSV".
+
 Response Format
 1. JSON response example:
 {
@@ -49,6 +53,7 @@ Sum:
 45
 Product:
 362880
+   
 Error Handling
 ● 400 BAD_REQUEST: CSV missing, invalid, or empty.
 ● 500 INTERNAL_SERVER_ERROR: unexpected errors during processing.
@@ -58,5 +63,6 @@ Example error response:
 "message": "CSV file is empty or invalid",
 "data": null
 }
+
 Testing
 Upload sample CSV files via Postman or cURL. Verify all operations are returned correctly. Edge cases like empty CSV, non-square matrices, or invalid data are handled with proper error responses.
